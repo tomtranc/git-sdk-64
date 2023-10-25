@@ -464,20 +464,22 @@ else
 	GIT_SDK_SH_PATH="$(realpath "$BASH_SOURCE")"
 fi
 
-case $- in
-*i*)
-	# in any interactive session, initialize (but do not fetch) worktrees
-	# in /usr/src, and also create the Git SDK shortcut on the Desktop
-	# (unless it already exists).
-	test -n "$JENKINS_URL" || {
-		for project in git build-extra MINGW-packages MSYS2-packages
-		do
-			sdk init-lazy $project
-		done
+## Skip this whole portion as it is meant for Git SDK.
+## We are only using this to use `pacman` and other packages
+# case $- in
+# *i*)
+# 	# in any interactive session, initialize (but do not fetch) worktrees
+# 	# in /usr/src, and also create the Git SDK shortcut on the Desktop
+# 	# (unless it already exists).
+# 	test -n "$JENKINS_URL" || {
+# 		for project in git build-extra MINGW-packages MSYS2-packages
+# 		do
+# 			sdk init-lazy $project
+# 		done
 
-		sdk create-desktop-icon --gentle
-	}
+# 		sdk create-desktop-icon --gentle
+# 	}
 
-	sdk welcome
-	;;
-esac
+# 	sdk welcome
+# 	;;
+# esac
