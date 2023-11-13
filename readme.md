@@ -5,6 +5,6 @@ pacman -S zsh
 ```
 ### Optional tools
 ```sh
-# netcat
-pacman -S openbsd-netcat
+# netcat jq
+pacman -S openbsd-netcat jq
 ```
